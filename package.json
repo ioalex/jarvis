@@ -1,10 +1,11 @@
 {
   "name": "jarvis",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A personal assistant to quickly start projects  ",
+  "main": "src/index.js",
+  "bin": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "Alex He",
@@ -13,5 +14,13 @@
     "colors": "^1.4.0",
     "commander": "^6.0.0",
     "inquirer": "^7.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioalex/jarvis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ioalex/jarvis/issues"
+  },
+  "homepage": "https://github.com/ioalex/jarvis#readme"
 }
