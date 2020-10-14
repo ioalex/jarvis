@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-// TODO: Debug prompts!
-
+const fs = require("fs");
 const inquirer = require("inquirer");
 const colors = require("colors");
 const open = require("open");
@@ -20,6 +19,34 @@ colors.setTheme({
   hello: "cyan",
 });
 
+const existingConfig = fs.existsSync("jarvis.json");
+
+function buildConfig() {
+  console.log("🎩: Working on it, sir!");
+}
+
+if (existingConfig) {
+  inquirer
+    .prompt([
+      {
+        type: "confirm",
+        name: "overwrite",
+        message:
+          "'jarvis.json' already exists! Would you like to overwrite it?",
+        default: false,
+      },
+    ])
+    .then((answers) => {
+      if (answers.overwrite) {
+        buildConfig();
+      } else {
+        console.log("🎩: Very well sir. Farewell! 👋".warn);
+      }
+    });
+} else {
+  buildConfig();
+}
+
 function partyHandler() {
   console.log("🎩: LET'S GET THIS PAAARRRTTTYYYY STARTED!".silly);
   open("https://www.youtube.com/watch?v=9osbpEHvQVE");
@@ -30,7 +57,7 @@ function partyHandler() {
 }
 
 function exitHandler() {
-  console.log("🎩: Very well sir. Farewell!".warn);
+  console.log("🎩: Very well sir. Farewell! 👋".warn);
   process.exit();
 }
 
