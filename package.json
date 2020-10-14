@@ -12,9 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "commander": "^6.0.0",
+    "commander": "^6.1.0",
     "inquirer": "^7.3.3",
-    "open": "^7.1.0"
+    "open": "^7.3.0"
   },
   "repository": {
     "type": "git",
